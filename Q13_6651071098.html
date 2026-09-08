@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            font-size: 13px;
+            background-color: #ffffff;
+            margin: 30px;
+        }
+        .tour-table {
+            border-collapse: collapse;
+            border: 1px solid #b8ad67;
+            width: 530px;
+            margin: 0 auto;
+            background-color: #fffee4;
+        }
+        .tour-table td {
+            border: 1px solid #c9be78;
+            padding: 5px 10px;
+            vertical-align: middle;
+        }
+        .title-cell {
+            text-align: center;
+            color: #245863;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px 5px !important;
+        }
+        .col-left {
+            width: 140px;
+            color: #333333;
+            white-space: nowrap;
+        }
+        input[type="text"] {
+            border: 1px solid #7f9db9;
+            padding: 2px 4px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+        select {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            border: 1px solid #7f9db9;
+            padding: 1px;
+        }
+        textarea {
+            border: 1px solid #7f9db9;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            padding: 3px 5px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        fieldset {
+            border: 1px solid #b8a038;
+            width: 340px;
+            height: 52px;
+            box-sizing: border-box;
+            padding: 2px 10px;
+            margin: 0;
+        }
+        legend {
+            font-style: italic;
+            color: #8b0000;
+            font-size: 12px;
+            padding: 0 4px;
+        }
+        input[type="button"] {
+            padding: 3px 14px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        #lblThongBao {
+            color: #e67e22;
+            font-weight: bold;
+            font-size: 13px;
+            min-height: 18px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function xuLy() {
+            var lbl = document.getElementById("lblThongBao");
+            lbl.innerText = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmDangKyDuLich">
+        <table class="tour-table" border="1" cellpadding="5" cellspacing="0">
+            <!-- Dòng 1: Tiêu đề -->
+            <tr>
+                <td colspan="2" class="title-cell">
+                    Đăng ký du lịch
+                </td>
+            </tr>
+            <!-- Dòng 2: Họ và tên -->
+            <tr>
+                <td class="col-left">Họ và tên</td>
+                <td>
+                    <input type="text" id="txtHoTen" size="34" value="Phạm Ngọc Cẩm Đào">
+                </td>
+            </tr>
+            <!-- Dòng 3: Địa chỉ -->
+            <tr>
+                <td class="col-left">Địa chỉ</td>
+                <td>
+                    <input type="text" id="txtDiaChi" size="26" value="227 Nguyễn Văn Cừ">
+                </td>
+            </tr>
+            <!-- Dòng 4: Điện thoại -->
+            <tr>
+                <td class="col-left">Điện thoại</td>
+                <td>
+                    <input type="text" id="txtDienThoai" size="20" value="8351056">
+                </td>
+            </tr>
+            <!-- Dòng 5: Khách Việt Nam -->
+            <tr>
+                <td class="col-left">Khách Việt Nam</td>
+                <td>
+                    <input type="checkbox" id="chkKhachVN" checked>
+                </td>
+            </tr>
+            <!-- Dòng 6: Chọn tour -->
+            <tr>
+                <td class="col-left">Chọn tour</td>
+                <td>
+                    <select id="cboTour" style="width: 250px;">
+                        <optgroup label="Miền Bắc">
+                            <option value="Hà Nội - Hạ Long - Sapa">Hà Nội - Hạ Long - Sapa</option>
+                            <option value="Hà Nội - Chùa Hương - Ninh Bình">Hà Nội - Chùa Hương - Ninh Bình</option>
+                            <option value="Hà Nội - Cát Bà - Tuần Châu">Hà Nội - Cát Bà - Tuần Châu</option>
+                        </optgroup>
+                        <optgroup label="Miền Trung">
+                            <option value="Huế - Bạch Mã - Đà Nẵng">Huế - Bạch Mã - Đà Nẵng</option>
+                            <option value="Nha Trang - Đà Lạt">Nha Trang - Đà Lạt</option>
+                            <option value="Buôn mê thuột - Gia lai - Kontum" selected>Buôn mê thuột - Gia lai - Kontum</option>
+                        </optgroup>
+                        <optgroup label="Miền Nam">
+                            <option value="TP.HCM - Cần Thơ - Cà Mau">TP.HCM - Cần Thơ - Cà Mau</option>
+                            <option value="TP.HCM - Mỹ Tho">TP.HCM - Mỹ Tho</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <!-- Dòng 7: Phương tiện -->
+            <tr>
+                <td class="col-left">Phương tiện</td>
+                <td>
+                    <input type="radio" name="rdPhuongTien" id="rdMayBay" value="Máy bay"> Máy bay &nbsp;
+                    <input type="radio" name="rdPhuongTien" id="rdOTo" value="Xe ô tô" checked> Xe ô tô
+                </td>
+            </tr>
+            <!-- Dòng 8: Số lượng đoàn khách (OptionGroup fieldset) -->
+            <tr>
+                <td class="col-left">&nbsp;</td>
+                <td>
+                    <fieldset>
+                        <legend align="left">Số lượng đoàn khách</legend>
+                        Người lớn <input type="text" id="txtNguoiLon" size="3" value="6"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Trẻ em <input type="text" id="txtTreEm" size="3" value="4">
+                    </fieldset>
+                </td>
+            </tr>
+            <!-- Dòng 9: Ghi chú thêm -->
+            <tr>
+                <td class="col-left" style="vertical-align: top; padding-top: 8px;">Ghi chú thêm</td>
+                <td>
+                    <textarea id="txtGhiChu" rows="2" style="width: 300px;">Có 2 trẻ em dưới 6 tuổi&#10;Có 2 người ăn chay</textarea>
+                </td>
+            </tr>
+            <!-- Dòng 10: Nút Đồng ý -->
+            <tr>
+                <td colspan="2" align="center" style="padding: 6px;">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLy()">
+                </td>
+            </tr>
+            <!-- Dòng 11: Điều khiển nhãn in thông báo -->
+            <tr>
+                <td colspan="2" align="center">
+                    <div id="lblThongBao">Bạn đã đăng ký thành công!!!</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

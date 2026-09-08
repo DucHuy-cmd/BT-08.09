@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            font-size: 13px;
+            background-color: #ffffff;
+            margin: 30px;
+        }
+        .register-table {
+            border-collapse: collapse;
+            border: 1px solid #4a8f4f;
+            width: 540px;
+            margin: 0 auto;
+            background-color: #eef7ee;
+        }
+        .register-table td {
+            border: 1px solid #7cb382;
+            padding: 5px 10px;
+            vertical-align: middle;
+        }
+        .title-cell {
+            text-align: center;
+            color: #2e6930;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 10px 5px !important;
+        }
+        .col-left {
+            width: 190px;
+            color: #333333;
+            white-space: nowrap;
+        }
+        input[type="text"] {
+            border: 1px solid #7f9db9;
+            padding: 2px 4px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+        select {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            border: 1px solid #7f9db9;
+        }
+        input[type="button"] {
+            padding: 3px 14px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        #lblThongBao {
+            color: #d9534f;
+            font-weight: bold;
+            font-size: 14px;
+            min-height: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function xuLy() {
+            var lbl = document.getElementById("lblThongBao");
+            lbl.innerText = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmKhuyenMai">
+        <table class="register-table" border="1" cellpadding="5" cellspacing="0">
+            <!-- Dòng 1: Tiêu đề -->
+            <tr>
+                <td colspan="2" class="title-cell">
+                    Phiếu đăng ký tham gia chương trình khuyến mãi
+                </td>
+            </tr>
+            <!-- Dòng 2: Họ và tên -->
+            <tr>
+                <td class="col-left">Họ và tên</td>
+                <td>
+                    <input type="text" id="txtHoTen" size="32" value="Nguyễn Ngọc Quỳnh Nga">
+                </td>
+            </tr>
+            <!-- Dòng 3: Địa chỉ -->
+            <tr>
+                <td class="col-left">Địa chỉ</td>
+                <td>
+                    <input type="text" id="txtDiaChi" size="26" value="2Bia Hùng Vương, Q10">
+                </td>
+            </tr>
+            <!-- Dòng 4: Điện thoại -->
+            <tr>
+                <td class="col-left">Điện thoại</td>
+                <td>
+                    <input type="text" id="txtDienThoai" size="20" value="0909097506">
+                </td>
+            </tr>
+            <!-- Dòng 5: Phái -->
+            <tr>
+                <td class="col-left">Phái</td>
+                <td>
+                    <input type="radio" name="rdPhai" id="rdNam" value="Nam"> Nam
+                    <input type="radio" name="rdPhai" id="rdNu" value="Nữ" checked> Nữ
+                </td>
+            </tr>
+            <!-- Dòng 6: Nghề nghiệp -->
+            <tr>
+                <td class="col-left">Nghề nghiệp</td>
+                <td>
+                    <select id="cboNgheNghiep" style="width: 100px;">
+                        <option value="Bác sĩ">Bác sĩ</option>
+                        <option value="Kỹ sư">Kỹ sư</option>
+                        <option value="Giáo viên" selected>Giáo viên</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Dòng 7: Chọn sản phẩm tham gia -->
+            <tr>
+                <td class="col-left" style="vertical-align: top; padding-top: 8px;">Chọn sản phẩm tham gia</td>
+                <td>
+                    <select id="lstSanPham" size="4" multiple style="width: 130px;">
+                        <option value="Kem đánh răng" selected>Kem đánh răng</option>
+                        <option value="Bột giặt">Bột giặt</option>
+                        <option value="Dầu gội đầu" selected>Dầu gội đầu</option>
+                        <option value="Sữa tắm">Sữa tắm</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Dòng 8: Số người dự đoán tham gia -->
+            <tr>
+                <td class="col-left">Số người dự đoán tham gia</td>
+                <td>
+                    <input type="text" id="txtSoNguoi" size="12" value="250000">
+                </td>
+            </tr>
+            <!-- Dòng 9: Nút Đồng ý -->
+            <tr>
+                <td colspan="2" align="center" style="padding: 6px;">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLy()">
+                </td>
+            </tr>
+            <!-- Dòng 10: Điều khiển nhãn in câu thông báo -->
+            <tr>
+                <td colspan="2" align="center">
+                    <div id="lblThongBao">Bạn đã đăng ký thành công!!!</div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

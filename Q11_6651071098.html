@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển trên form</title>
+    <style>
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            font-size: 13px;
+            background-color: #ffffff;
+            margin: 40px;
+        }
+        .form-container {
+            width: 320px;
+            margin: 0 auto;
+        }
+        .form-title {
+            text-align: center;
+            color: #993300;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        .table-login {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #7f9db9;
+            background-color: #f2f7fc;
+        }
+        .table-login td {
+            border: 1px solid #7f9db9;
+            padding: 6px 10px;
+            vertical-align: middle;
+        }
+        .col-label {
+            width: 110px;
+            white-space: nowrap;
+            color: #000000;
+        }
+        .table-login input[type="text"],
+        .table-login input[type="password"] {
+            width: 160px;
+            padding: 2px 4px;
+            border: 1px solid #7f9db9;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+        .table-login input[type="button"] {
+            padding: 3px 14px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .arrow-cell {
+            text-align: right;
+            color: #000080;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #lblMaNguoiDung {
+            color: #000080;
+            font-weight: bold;
+            font-size: 13px;
+            min-height: 18px;
+        }
+    </style>
+    <script>
+        function xuLy() {
+            var ma = document.getElementById("txtMaNguoiDung").value;
+            document.getElementById("lblMaNguoiDung").innerText = ma;
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmDangNhap">
+        <div class="form-container">
+            <div class="form-title">Đăng nhập</div>
+            <table class="table-login" border="1" cellpadding="5" cellspacing="0">
+                <!-- Dòng 1: Mã người dùng -->
+                <tr>
+                    <td class="col-label">Mã người dùng:</td>
+                    <td>
+                        <input type="text" id="txtMaNguoiDung" value="ptnhung">
+                    </td>
+                </tr>
+                <!-- Dòng 2: Mật khẩu -->
+                <tr>
+                    <td class="col-label">Mật khẩu:</td>
+                    <td>
+                        <input type="password" id="txtMatKhau" value="12345678">
+                    </td>
+                </tr>
+                <!-- Dòng 3: Nút Đồng ý -->
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLy()">
+                    </td>
+                </tr>
+                <!-- Dòng 4: Xuất nội dung ô Mã người dùng ra điều khiển nhãn -->
+                <tr>
+                    <td class="arrow-cell">&#10142;</td>
+                    <td>
+                        <div id="lblMaNguoiDung">ptnhung</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+</body>
+</html>
